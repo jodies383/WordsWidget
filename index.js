@@ -5,22 +5,28 @@ let displayLength = document.querySelector(".displayLength")
 
 analyzeSentenceBtn.addEventListener('click', () => {
     let enter = enterSentence.value
-    let split = enter.split(" ")
+    let replace = enter.replace(/[^\w\s]|_/g, "")
+        .replace(/\s+/g, " ");
+    let split = replace.split(" ")
     let sentence = ""
-    // let list = []
-    // list.push(enter)
-    const highlightedWords = split.map(word => {
-        if (word.length > 4) {
-            return `<mark>${word}</mark>`
+    if (enter) {
+
+        const highlightedWords = split.map(word => {
+            if (word.length > 4) {
+                return `<mark>${word}</mark>`
+            }
+            return word
+        })
+        for (let index = 0; index < highlightedWords.length; index++) {
+            sentence += highlightedWords[index] + " ";
         }
-        return word
-    })
-    for (let index = 0; index < highlightedWords.length; index++) {
-        sentence += highlightedWords[index] + " ";
+
+
+        displaySentence.innerHTML = sentence;
+        displayLength.innerHTML = `there are ${split.length} words in your sentence`;
     }
-    // console.log(highlightedWords);
-    // console.log(sentence);
-    displaySentence.innerHTML = sentence;
-    displayLength.innerHTML = `there are ${split.length} words in your sentence`;
-    console.log(displaySentence.innerHTML);
+    else {
+        displaySentence.innerHTML = "no sentence found"; 
+    }
 })
+
