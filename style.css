@@ -25,3 +25,6 @@ input[type="number"], input[type="search"], input[type="text"], textarea, select
     cursor: pointer;
     outline: 0;
   }
+  .hideItems{
+      display: none;
+  }
