@@ -9,10 +9,10 @@ analyzeSentenceBtn.addEventListener('click', () => {
    
     const highlightedWords = split.map(word => {
         if (word.length > 4) {
-            return `<mark>${word}<mark>`
+            return (`<mark>${word}<mark>`)
         }
     })
  
     displaySentence.innerHTML = highlightedWords;
-    displayLength.innerHTML = split.length;
+    displayLength.innerHTML = `there are ${split.length} words in your sentence`;
 })
