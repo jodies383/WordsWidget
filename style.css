@@ -16,11 +16,6 @@ input[type="number"], input[type="search"], input[type="text"], textarea, select
     margin: 1px;
   }
   
-  .space {
-    margin-left: 30%;
-    display: flex;
-  }
-  
   button:hover {
     cursor: pointer;
     outline: 0;

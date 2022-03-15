@@ -49,4 +49,6 @@ hideUnderFive.addEventListener('click', () => {
         }
     }
     displaySentence.innerHTML = sentence;
+    hideUnderFive.checked = true
 });
+
