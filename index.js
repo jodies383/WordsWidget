@@ -12,20 +12,26 @@ analyzeSentenceBtn.addEventListener('click', () => {
         .replace(/\s+/g, " ");
     let split = replace.split(" ")
     let sentence = ""
+    let list = []
     if (enter) {
         const longestWord = () => {
+            //push new objects??
+            // const { sentence, wordCount, longestWords } = s
+            // list.push(new s(enter))
+            //limit to last 5
+            //arr.slice(Math.max(arr.length - 5, 1))
             let sortedWord = split.sort((shortest, longest) => {
                 return longest.length - shortest.length;
             })
             return sortedWord[0];
         }
         const highlightedWords = split.map(word => {
-            
+
             if (word.length > 4) {
                 return `<mark>${word}</mark>`
             }
             return word
-            
+
         })
         for (let index = 0; index < highlightedWords.length; index++) {
             sentence += highlightedWords[index] + " ";
@@ -39,7 +45,7 @@ analyzeSentenceBtn.addEventListener('click', () => {
         displayLength.innerHTML = "";
         longestWordDisplay.innerHTML = "";
     }
-    
+
 })
 
 
@@ -75,10 +81,10 @@ hideUnderFive.addEventListener('click', () => {
             }
             displaySentence.innerHTML = sentence;
             displayLength.innerHTML = `there are ${split.length} words in your sentence`;
-        
+
 
         }
-     } else {
+    } else {
         displaySentence.innerHTML = "no sentence found";
         displayLength.innerHTML = "";
 
