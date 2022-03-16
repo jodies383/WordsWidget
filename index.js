@@ -36,6 +36,8 @@ analyzeSentenceBtn.addEventListener('click', () => {
     }
     else {
         displaySentence.innerHTML = "no sentence found";
+        displayLength.innerHTML = "";
+        longestWordDisplay.innerHTML = "";
     }
     
 })
@@ -73,7 +75,13 @@ hideUnderFive.addEventListener('click', () => {
             }
             displaySentence.innerHTML = sentence;
             displayLength.innerHTML = `there are ${split.length} words in your sentence`;
+        
+
         }
+     } else {
+        displaySentence.innerHTML = "no sentence found";
+        displayLength.innerHTML = "";
+
     }
 });
 
