@@ -31,3 +31,7 @@ input[type="number"], input[type="search"], input[type="text"], textarea, select
     background-color: rgb(255, 253, 127) !important;
     color: black;
   }
+  mark2 {
+    background-color: rgb(189, 255, 127) !important;
+    color: black;
+  }
