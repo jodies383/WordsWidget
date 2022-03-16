@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,23 +10,27 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <title>Words Widget</title>
 </head>
+
 <body>
-    <div class="text-center">
-        
-    <h1>Words Widget</h1>
-    <input type="text" class="enterSentence" id="enterSentence">
-    <button class="analyzeSentence" type="button">
-        Analyze
-    </button>
-    <div>
-        <label>
-            <input type="checkbox" class="hideUnderFive">
-            Hide words under 5 characters
-        </label>
+    <div class="text-center main">
+        <div class="container mt-5">
+            <h1>Words Widget</h1>
+            <input type="text" class="enterSentence" id="enterSentence">
+            <button class="analyzeSentence" type="button">
+                Analyze
+            </button>
+            <div>
+                <label>
+                    <input type="checkbox" class="hideUnderFive">
+                    Hide words under 5 characters
+                </label>
+            </div>
+            <div class="displaySentence"></div>
+            <div class="displayLength"></div>
+        </div>
     </div>
-    <div class="displaySentence"></div>
-    <div class="displayLength"></div>
-    </div>
+
 </body>
 <script src="index.js"></script>
+
 </html>
