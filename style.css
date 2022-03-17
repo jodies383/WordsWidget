@@ -16,6 +16,8 @@ input[type="number"], input[type="search"], input[type="text"], textarea, select
   }
   button {
     border: none;
+    background-color: rgb(39, 37, 33);
+    color: #fff;
     border-radius: 5px !important;
     width: 100px !important;
     padding: 12px !important;
@@ -44,26 +46,7 @@ h1{
   /* color: rgb(255, 165, 0); */
   font-family: 'Special Elite', cursive;
 }
-/* Animation */
-.displayLength, .longestWordDisplay{
-    overflow: hidden;
-    border-right: .15em solid rgb(255, 165, 0); /* The typwriter cursor */
-    white-space: nowrap; 
-    margin: 0 auto; 
-    letter-spacing: .15em;
-    animation: 
-      typing 3.5s steps(40, end),
-      blink-caret .75s step-end infinite;
-  }
-  
-  /* The typing effect */
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange; }
-  }
+
+/* .displayLength, .longestWordDisplay{
+
+  } */
