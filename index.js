@@ -34,14 +34,14 @@ analyzeSentenceBtn.addEventListener('click', () => {
 
 
         const highlightedWords = split.map(word => {
-            const filWord = split.filter((words) => {
+            let filWord = split.filter((words) => {
                 return words.length == string.length;
               });
               console.log(filWord);
-            if (word.includes(filWord)) {
+            if (filWord.includes(word)) {
                 return `<mark2>${word}</mark2>`
             }
-            else if (!word.includes(filWord) && word.length > 4) {
+            else if (!filWord.includes(word) && word.length > 4) {
                 return `<mark>${word}</mark>`
             }
             return word
