@@ -15,9 +15,7 @@ analyzeSentenceBtn.addEventListener('click', () => {
     let list = []
     if (enter) {
         const longestWord = () => {
-            //push new objects??
-            // const { sentence, wordCount, longestWords } = s
-            // list.push(new s(enter))
+          
             //limit to last 5
             //arr.slice(Math.max(arr.length - 5, 1))
             let sortedWord = split.sort((shortest, longest) => {
@@ -36,9 +34,13 @@ analyzeSentenceBtn.addEventListener('click', () => {
         for (let index = 0; index < highlightedWords.length; index++) {
             sentence += highlightedWords[index] + " ";
         }
+        let theWordCount = `there are ${split.length} words in your sentence`
+        let longestWordCount = `the longest word is <mark2>${longestWord()}</mark2>`
+        list.push({sentences: sentence, wordCount: theWordCount, longWord: longestWordCount})
+        console.log(list);
         displaySentence.innerHTML = sentence;
-        displayLength.innerHTML = `there are ${split.length} words in your sentence`;
-        longestWordDisplay.innerHTML = `the longest word is <mark2>${longestWord()}</mark2>`
+        displayLength.innerHTML = theWordCount;
+        longestWordDisplay.innerHTML = longestWordCount;
     }
     else {
         displaySentence.innerHTML = "no sentence found";
@@ -60,6 +62,9 @@ hideUnderFive.addEventListener('click', () => {
             const highlightedWords = split.map(word => {
                 if (word.length < 5) {
                     return `<div class="hideItems">${word}</div>`
+                }
+                if (word.length > 4) {
+                    return `<mark>${word}</mark>`
                 }
                 return word
             })
