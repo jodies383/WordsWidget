@@ -2,6 +2,9 @@
 *{
   font-size: x-large;
 }
+body {
+  background-image: url("ink.png");
+}
 input[type="number"], input[type="search"], input[type="text"], textarea, select {
     height: 55px !important;
     padding: 6px 10px !important;
@@ -43,11 +46,11 @@ h1{
 }
 /* Animation */
 .displayLength, .longestWordDisplay{
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    overflow: hidden;
     border-right: .15em solid rgb(255, 165, 0); /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .15em;
     animation: 
       typing 3.5s steps(40, end),
       blink-caret .75s step-end infinite;
