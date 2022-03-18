@@ -50,7 +50,7 @@ function myFunction(evt) {
         for (let i = 0; i < highlightedWords.length; i++) {
             sentence += highlightedWords[i] + " ";
         }
-        let theWordCount = `there are ${split.length} words in this sentence`   
+        let theWordCount = `there are ${split.length} words in this sentence`
         displaySentence.innerHTML = sentence;
         displayLength.innerHTML = theWordCount;
     }
@@ -65,11 +65,11 @@ function myFunction(evt) {
     listOfSentences.innerHTML = displayWords
 }
 listOfSentences.addEventListener('click', myFunction)
-  
+
 analyzeSentenceBtn.addEventListener('click', () => {
     if (localStorage['sentences']) {
         sentenceList = JSON.parse(localStorage.getItem('sentences'));
-    
+
     }
     let enter = enterSentence.value
     let replace = enter.replace(/[^\w\s]|_/g, "")
@@ -111,6 +111,7 @@ analyzeSentenceBtn.addEventListener('click', () => {
     }
     else {
         displaySentence.innerHTML = "no sentence found";
+        setTimeout(() => { displaySentence.innerHTML = "" }, 2000);
         displayLength.innerHTML = "";
         longestWordDisplay.innerHTML = "";
     }
@@ -148,7 +149,7 @@ hideUnderFive.addEventListener('click', () => {
                 if (filWord.includes(word)) {
                     return `<mark2>${word}</mark2>`
                 }
-                
+
                 else if (!filWord.includes(word) && word.length > 4) {
                     return `<mark>${word}</mark>`
                 }

@@ -1,63 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
+
+.title {
+  font-family: 'Fredoka', sans-serif;
+
+}
+
+.main {
+  margin-top: 5% !important;
+  font-family: 'Fredoka', sans-serif;
   font-size: large;
- 
-}
-.main{
-  margin: 2%;
-} 
-/* body {
-  background-image: url("ink.png");
-} */
-input[type="number"], input[type="search"], input[type="text"], textarea, select {
-    height: 45px !important;
-    padding: 6px 10px !important;
-    background-color: #fff;
-    border: 1px solid #D1D1D1;
-    border-radius: 4px;
-    box-shadow: none;
-    box-sizing: border-box;
-  }
-  button {
-    border: none;
-    background-color: rgb(39, 37, 33);
-    color: #fff;
-    border-radius: 5px !important;
-    width: 100px !important;
-    padding: 12px !important;
-    font-size: 16px;
-    margin: 1px !important;
-  }
-  
-  .openSentence:hover, button:hover {
-    cursor: pointer;
-    outline: 0;
-  }
-  .hideItems{
-      display: none;
-  }
-  .hideItems2{
-    display: none;
 }
 
-  mark{
-    background-color: rgb(255, 253, 127) !important;
-    color: black;
-  }
-  mark2 {
-    background-color: rgb(189, 255, 127) !important;
-    color: black;
-  }
+.analyzeSentence {
+  margin-top: 1%;
+}
 
-/* h1{
-  font-family: 'Special Elite', cursive;
-} */
+.shadow-textarea textarea.form-control::placeholder {
+  font-weight: 300;
+}
 
-/* .displayLength, .longestWordDisplay{
+.shadow-textarea textarea.form-control {
+  padding-left: 0.8rem;
+}
 
-  } */
-  .lastFive{
- 
-    margin-top: 15% !important;
- 
-  }
+.displaySentence {
+  font-size: 155%;
+  margin: 1%;
+}
+
+.displayLength {
+  font-size: 140%;
+  margin: 1%;
+}
+
+.openSentence:hover {
+  cursor: pointer;
+  outline: 0;
+}
+
+.hideItems {
+  display: none;
+}
+
+.hideItems2 {
+  display: none;
+}
+
+mark {
+  background-color: rgb(255, 253, 127) !important;
+  color: black;
+}
+
+mark2 {
+  background-color: rgb(189, 255, 127) !important;
+  color: black;
+}
+
+.openSentence {
+  color: rgb(73, 73, 202);
+  text-decoration: underline;
+}
