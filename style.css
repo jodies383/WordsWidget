@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 *{
-  font-size: x-large;
+  font-size: large;
+ 
 }
-body {
+.main{
+  margin: 2%;
+} 
+/* body {
   background-image: url("ink.png");
-}
+} */
 input[type="number"], input[type="search"], input[type="text"], textarea, select {
-    height: 55px !important;
+    height: 45px !important;
     padding: 6px 10px !important;
     background-color: #fff;
     border: 1px solid #D1D1D1;
@@ -25,13 +29,16 @@ input[type="number"], input[type="search"], input[type="text"], textarea, select
     margin: 1px !important;
   }
   
-  button:hover {
+  .openSentence:hover, button:hover {
     cursor: pointer;
     outline: 0;
   }
   .hideItems{
       display: none;
   }
+  .hideItems2{
+    display: none;
+}
 
   mark{
     background-color: rgb(255, 253, 127) !important;
@@ -42,11 +49,15 @@ input[type="number"], input[type="search"], input[type="text"], textarea, select
     color: black;
   }
 
-h1{
-  /* color: rgb(255, 165, 0); */
+/* h1{
   font-family: 'Special Elite', cursive;
-}
+} */
 
 /* .displayLength, .longestWordDisplay{
 
   } */
+  .lastFive{
+ 
+    margin-top: 15% !important;
+ 
+  }
