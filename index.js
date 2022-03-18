@@ -37,7 +37,6 @@ analyzeSentenceBtn.addEventListener('click', () => {
             let filWord = split.filter((words) => {
                 return words.length == string.length;
               });
-              console.log(filWord);
             if (filWord.includes(word)) {
                 return `<mark2>${word}</mark2>`
             }
@@ -66,6 +65,7 @@ analyzeSentenceBtn.addEventListener('click', () => {
 
 })
 
+console.log(displayWords);
 
 hideUnderFive.addEventListener('click', () => {
     let enter = enterSentence.value
@@ -73,13 +73,28 @@ hideUnderFive.addEventListener('click', () => {
         .replace(/\s+/g, " ");
     let split = replace.split(" ")
     let sentence = ""
+    let string = ""
+
+        var longestWord = 0;
+        for (var i = 0; i < split.length; i++) {
+            if (split[i].length > longestWord) {
+                longestWord = split[i].length;
+                string = split[i]
+            }
+        }
     if (enter) {
         if (hideUnderFive.checked === true) {
             const highlightedWords = split.map(word => {
+                let filWord = split.filter((words) => {
+                    return words.length == string.length;
+                  });
+                  if (filWord.includes(word)) {
+                    return `<mark2>${word}</mark2>`
+                }
                 if (word.length < 5) {
                     return `<div class="hideItems">${word}</div>`
                 }
-                if (word.length > 4) {
+                if (!filWord.includes(word) && word.length > 4) {
                     return `<mark>${word}</mark>`
                 }
                 return word
@@ -92,7 +107,13 @@ hideUnderFive.addEventListener('click', () => {
             displaySentence.innerHTML = sentence;
         } else {
             const highlightedWords = split.map(word => {
-                if (word.length > 4) {
+                let filWord = split.filter((words) => {
+                    return words.length == string.length;
+                  });
+                  if (filWord.includes(word)) {
+                    return `<mark2>${word}</mark2>`
+                }
+                else if (!filWord.includes(word) && word.length > 4) {
                     return `<mark>${word}</mark>`
                 }
                 return word
@@ -101,9 +122,6 @@ hideUnderFive.addEventListener('click', () => {
                 sentence += highlightedWords[index] + " ";
             }
             displaySentence.innerHTML = sentence;
-            displayLength.innerHTML = `there are ${split.length} words in your sentence`;
-
-
         }
     } else {
         displaySentence.innerHTML = "no sentence found";
