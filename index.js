@@ -7,7 +7,9 @@ let displaySentence = document.querySelector(".displaySentence")
 let displayLength = document.querySelector(".displayLength")
 let longestWordDisplay = document.querySelector(".longestWordDisplay")
 let listOfSentences = document.querySelector(".listOfSentences")
+let dot = document.querySelector(".dot")
 let sentenceList = []
+let wordLength = []
 if (localStorage['sentences']) {
     sentenceList = JSON.parse(localStorage.getItem('sentences'));
 
@@ -71,6 +73,7 @@ analyzeSentenceBtn.addEventListener('click', () => {
         sentenceList = JSON.parse(localStorage.getItem('sentences'));
 
     }
+
     let enter = enterSentence.value
     let replace = enter.replace(/[^\w\s]|_/g, "")
         .replace(/\s+/g, " ");
@@ -105,15 +108,26 @@ analyzeSentenceBtn.addEventListener('click', () => {
         }
         let theWordCount = `there are ${split.length} words in this sentence`
         sentenceList.push(enter)
+        wordLength.push(split.length)
         localStorage.setItem('sentences', JSON.stringify(sentenceList));
         displaySentence.innerHTML = sentence;
         displayLength.innerHTML = theWordCount;
+
+        let topFive = wordLength.slice(0).slice(-5)
+        avg = topFive.reduce((a, b) => a + b, 0) / topFive.length;
+        console.log(avg)
+
+        if (split.length >= avg.toFixed(2)) {
+            return document.getElementById("dot").style.backgroundColor = "green";
+
+        } else if ((split.length <= avg.toFixed(2))) { return document.getElementById("dot").style.backgroundColor = "orange"; }
+
     }
     else {
         displaySentence.innerHTML = "no sentence found";
         setTimeout(() => { displaySentence.innerHTML = "" }, 2000);
         displayLength.innerHTML = "";
-        longestWordDisplay.innerHTML = "";
+
     }
     let displayWords = wordsTemplate({
         sentence: sentenceList.slice(0).slice(-5)

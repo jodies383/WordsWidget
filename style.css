@@ -61,3 +61,10 @@ mark2 {
   color: rgb(73, 73, 202);
   text-decoration: underline;
 }
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
