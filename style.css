@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
 
-.title {
+
+/* .title {
   font-family: 'Fredoka', sans-serif;
 
-}
+} */
 
 .main {
   margin-top: 5% !important;
-  font-family: 'Fredoka', sans-serif;
+  /* font-family: 'Fredoka', sans-serif; */
   font-size: large;
 }
 
@@ -58,7 +59,7 @@ mark2 {
 }
 
 .openSentence {
-  color: rgb(73, 73, 202);
+  color: #AA7DCE;
   text-decoration: underline;
 }
 .dot {

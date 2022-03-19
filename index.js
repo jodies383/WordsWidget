@@ -8,8 +8,10 @@ let displayLength = document.querySelector(".displayLength")
 let longestWordDisplay = document.querySelector(".longestWordDisplay")
 let listOfSentences = document.querySelector(".listOfSentences")
 let dot = document.querySelector(".dot")
+let range = document.getElementById("customRange2")
 let sentenceList = []
 let wordLength = []
+var output = document.getElementById("demo");
 if (localStorage['sentences']) {
     sentenceList = JSON.parse(localStorage.getItem('sentences'));
 
@@ -17,7 +19,11 @@ if (localStorage['sentences']) {
 let displayWords = wordsTemplate({
     sentence: sentenceList.slice(0).slice(-5)
 });
+output.innerHTML = range.value;
 
+range.oninput = function() {
+  output.innerHTML = this.value;
+}
 function myFunction(evt) {
     enterSentence.value = evt.target.innerHTML
     let enter = enterSentence.value
@@ -44,7 +50,8 @@ function myFunction(evt) {
             if (filWord.includes(word)) {
                 return `<mark2>${word}</mark2>`
             }
-            else if (!filWord.includes(word) && word.length > 4) {
+    
+            else if (!filWord.includes(word) && word.length > range.value && range.value > 0) {
                 return `<mark>${word}</mark>`
             }
             return word
@@ -98,7 +105,7 @@ analyzeSentenceBtn.addEventListener('click', () => {
             if (filWord.includes(word)) {
                 return `<mark2>${word}</mark2>`
             }
-            else if (!filWord.includes(word) && word.length > 4) {
+            else if (!filWord.includes(word) && word.length > range.value && range.value > 0) {
                 return `<mark>${word}</mark>`
             }
             return word
@@ -164,7 +171,7 @@ hideUnderFive.addEventListener('click', () => {
                     return `<mark2>${word}</mark2>`
                 }
 
-                else if (!filWord.includes(word) && word.length > 4) {
+                else if (!filWord.includes(word) && word.length > range.value && range.value > 0) {
                     return `<mark>${word}</mark>`
                 }
                 return word
@@ -183,7 +190,7 @@ hideUnderFive.addEventListener('click', () => {
                 if (filWord.includes(word)) {
                     return `<mark2>${word}</mark2>`
                 }
-                else if (!filWord.includes(word) && word.length > 4) {
+                else if (!filWord.includes(word) && word.length > range.value && range.value > 0) {
                     return `<mark>${word}</mark>`
                 }
                 return word
@@ -201,5 +208,3 @@ hideUnderFive.addEventListener('click', () => {
 });
 listOfSentences.innerHTML = displayWords
 
-      //limit to last 5
-  //arr.slice(Math.max(arr.length - 5, 1))

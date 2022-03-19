@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,35 +17,45 @@
     </script>
     <title>Words Widget</title>
 </head>
+
 <body>
     <h1 class="text-center title">Words Widget</h1>
-    <div class="main">
-
-        <div class="container mt-12">
-            <div class="row">
-                <div class="col-sm-8">
-                    <div class="form-group shadow-textarea">
-                        <div class="dot" id="dot"></div>
-                    <textarea type="text" class="form-control z-depth-1 enterSentence" id="enterSentence" rows="3" placeholder="enter a sentence of 5 or more words to have it analyzed..."></textarea>
-                </div>
-                    <button class="btn btn-primary analyzeSentence" type="button">
-                        Analyze
-                    </button>
-                    <div>
-                        <label>
-                            <input type="checkbox" class="hideUnderFive">
-                            Hide words under 5 characters
-                        </label>
+  
+        <div class="main">
+            <div class="container mt-12">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="customRange2" class="form-label">Character limit</label>
+                        <input type="range" class="form-range" min="0" max="45" id="customRange2" value="4"><div id="demo"></div>
+                        
                     </div>
-                    <div class="displaySentence"></div>
-                    <div class="displayLength"></div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="listOfSentences"></div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="dot" id="dot"></div>
+                        <div class="form-group shadow-textarea">
+                            <textarea type="text" class="form-control z-depth-1 enterSentence" id="enterSentence"
+                                rows="3"
+                                placeholder="enter a sentence of 5 or more words to have it analyzed..."></textarea>
+                        </div>
+                        <button class="btn btn-primary analyzeSentence" type="button">
+                            Analyze
+                        </button>
+                        <div>
+                            <label>
+                                <input type="checkbox" class="hideUnderFive">
+                                Hide words under 5 characters
+                            </label>
+                        </div>
+                        <div class="displaySentence"></div>
+                        <div class="displayLength"></div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="listOfSentences"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </body>
 <script src="index.js"></script>
+
 </html>
