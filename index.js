@@ -25,6 +25,10 @@ range.oninput = function () {
     output.innerHTML = this.value;
 }
 
+enterSentence.addEventListener('click', () => {
+    enterSentence.value = ""
+})
+
 analyzeSentenceBtn.addEventListener('click', () => {
     setTimeout(() => { errorMessage.innerHTML = "" }, 2000);
 
