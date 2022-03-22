@@ -69,3 +69,9 @@ mark2 {
   border-radius: 50%;
   display: inline-block;
 }
+.green{
+  background-color: rgb(93, 192, 93);
+}
+.orange{
+  background-color: orange;
+}
