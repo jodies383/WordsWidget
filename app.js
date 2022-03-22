@@ -114,17 +114,19 @@ export const WordsWidget = () => {
 
     }
     const theDot = (sentence) => {
-        let lettersOnly = sentence.replace(/[^\w\s]|_/g, "")
-            .replace(/\s+/g, " ");
-        let splitSentence = lettersOnly.split(" ")
-        let topFive = wordLength.slice(0).slice(-5)
-        let avg = topFive.reduce((a, b) => a + b, 0) / topFive.length;
+        if (sentence) {
+            let lettersOnly = sentence.replace(/[^\w\s]|_/g, "")
+                .replace(/\s+/g, " ");
+            let splitSentence = lettersOnly.split(" ")
+            let topFive = wordLength.slice(0).slice(-5)
+            let avg = topFive.reduce((a, b) => a + b, 0) / topFive.length;
 
-        if (splitSentence.length >= avg.toFixed(2)) {
-            return ("green")
+            if (splitSentence.length >= avg.toFixed(2)) {
+                return ("green")
 
-        } else if ((splitSentence.length <= avg.toFixed(2))) {
-            return ("orange")
+            } else if ((splitSentence.length <= avg.toFixed(2))) {
+                return ("orange")
+            }
         }
     }
     const returnSentenceList = () => sentenceList
