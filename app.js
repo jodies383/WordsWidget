@@ -9,16 +9,20 @@ const WordsWidget = () => {
         sentenceList = JSON.parse(localStorage.getItem('sentences'));
 
     }
+    if (localStorage['wordLength']) {
+        wordLength = JSON.parse(localStorage.getItem('wordLength'));
+
+    }
     const highlightWord = (sentence, range) => {
         analyzedSentence = ""
         let lettersOnly = sentence.replace(/[^\w\s]|_/g, "")
             .replace(/\s+/g, " ");
         let splitSentence = lettersOnly.split(" ")
         let longestWord = ""
-        let wordLength = 0;
+        let enterLength = 0;
         for (let i = 0; i < splitSentence.length; i++) {
-            if (splitSentence[i].length > wordLength) {
-                wordLength = splitSentence[i].length;
+            if (splitSentence[i].length > enterLength) {
+                enterLength = splitSentence[i].length;
                 longestWord = splitSentence[i]
             }
         }
@@ -50,6 +54,7 @@ const WordsWidget = () => {
         if (sentence && sentence.length >= 5) {
             sentenceList.push(sentence)
             wordLength.push(splitSentence.length)
+            localStorage.setItem('wordLength', JSON.stringify(wordLength));
 
             localStorage.setItem('sentences', JSON.stringify(sentenceList));
             highlightWord(sentence, range)
@@ -113,8 +118,7 @@ const WordsWidget = () => {
             .replace(/\s+/g, " ");
         let splitSentence = lettersOnly.split(" ")
         let topFive = wordLength.slice(0).slice(-5)
-        avg = topFive.reduce((a, b) => a + b, 0) / topFive.length;
-
+        let avg = topFive.reduce((a, b) => a + b, 0) / topFive.length;
 
         if (splitSentence.length >= avg.toFixed(2)) {
             return ("green")

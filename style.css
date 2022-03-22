@@ -5,7 +5,6 @@
   font-family: 'Playfair Display', serif;
   font-size: 50px;
   letter-spacing: 0.1em;
-
 }
 
 .navbar {
@@ -73,13 +72,13 @@ input[type=range]::-ms-thumb {
   display: none;
 }
 
-mark {
-  background-color: rgb(255, 253, 127) !important;
+mark, .highlightCharLimit {
+  background-color: #f2dfd7 !important;
   color: black;
 }
 
-mark2 {
-  background-color: rgb(189, 255, 127) !important;
+mark2, .highlightLongWord {
+  background-color: #d4c1ec !important;
   color: black;
 }
 
@@ -95,7 +94,7 @@ mark2 {
   display: inline-block;
 }
 .green{
-  background-color: rgb(93, 192, 93);
+  background-color: rgb(189, 255, 127);
 }
 .orange{
   background-color: orange;
