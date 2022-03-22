@@ -1,18 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
 
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+  letter-spacing: 0.1em;
 
-/* .title {
-  font-family: 'Fredoka', sans-serif;
-
-} */
-
-.main {
-  margin-top: 5% !important;
-  /* font-family: 'Fredoka', sans-serif; */
-  font-size: large;
 }
 
+.navbar {
+  background: #A799B7;
+  text-align: center !important;
+  color: white;
+}
+
+.navbar-brand {
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Ephesis', cursive;
+  margin-left: 2%;
+}
+.main {
+  margin-top: 5% !important;
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: large;
+}
+input[type=range]::-webkit-slider-thumb {
+  background: #93B7BE;
+}
+input[type=range]::-moz-range-thumb {
+  background: #93B7BE;
+}
+input[type=range]::-ms-thumb {
+  background: #93B7BE;
+}
+.analyzeSentence{
+  background-color: #93B7BE !important;
+  border-color:#93B7BE !important;
+}
 .analyzeSentence {
   margin-top: 1%;
 }
@@ -59,7 +84,7 @@ mark2 {
 }
 
 .openSentence {
-  color: #AA7DCE;
+  color: #9d83b9;
   text-decoration: underline;
 }
 .dot {
