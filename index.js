@@ -1,3 +1,5 @@
+import {WordsWidget} from "./app.js"
+
 const analyzeSentenceBtn = document.querySelector(".analyzeSentence")
 const hideCheck = document.querySelector(".hideUnderFive")
 const template = document.querySelector(".wordsWidget").innerHTML

@@ -19,24 +19,30 @@
   font-family: 'Ephesis', cursive;
   margin-left: 2%;
 }
+
 .main {
   margin-top: 5% !important;
   font-family: 'Nanum Myeongjo', serif;
   font-size: large;
 }
+
 input[type=range]::-webkit-slider-thumb {
   background: #93B7BE;
 }
+
 input[type=range]::-moz-range-thumb {
   background: #93B7BE;
 }
+
 input[type=range]::-ms-thumb {
   background: #93B7BE;
 }
-.analyzeSentence{
+
+.analyzeSentence {
   background-color: #93B7BE !important;
-  border-color:#93B7BE !important;
+  border-color: #93B7BE !important;
 }
+
 .analyzeSentence {
   margin-top: 1%;
 }
@@ -86,6 +92,7 @@ mark2, .highlightLongWord {
   color: #9d83b9;
   text-decoration: underline;
 }
+
 .dot {
   height: 25px;
   width: 25px;
@@ -93,9 +100,11 @@ mark2, .highlightLongWord {
   border-radius: 50%;
   display: inline-block;
 }
-.green{
+
+.green {
   background-color: rgb(189, 255, 127);
 }
-.orange{
+
+.orange {
   background-color: orange;
 }

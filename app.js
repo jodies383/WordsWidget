@@ -1,4 +1,4 @@
-const WordsWidget = () => {
+export const WordsWidget = () => {
     let sentenceList = []
     let analyzedSentence = ""
     let theWordCount = ""
