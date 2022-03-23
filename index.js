@@ -8,6 +8,7 @@ const enterSentence = document.querySelector(".enterSentence")
 const displaySentence = document.querySelector(".displaySentence")
 const displayLength = document.querySelector(".displayLength")
 const errorMessage = document.querySelector(".errorMessage")
+const duplicateMessage = document.querySelector(".duplicateMessage")
 const listOfSentences = document.querySelector(".listOfSentences")
 const dot = document.querySelector(".dot")
 const range = document.getElementById("customRange2")
@@ -20,12 +21,14 @@ let displayWords = wordsTemplate({
 output.innerHTML = range.value;
 
 setTimeout(() => { errorMessage.innerHTML = "" }, 2000);
+setTimeout(() => { duplicateMessage.innerHTML = "" }, 2000);
 
 range.oninput = function () {
     output.innerHTML = this.value;
 }
 analyzeSentenceBtn.addEventListener('click', () => {
     setTimeout(() => { errorMessage.innerHTML = "" }, 2000);
+    setTimeout(() => { duplicateMessage.innerHTML = "" }, 2000);
 
     let enter = enterSentence.value
     wordsWidgetInst.analyzeSentence(enter, range.value)
@@ -33,6 +36,8 @@ analyzeSentenceBtn.addEventListener('click', () => {
     displaySentence.innerHTML = wordsWidgetInst.returnAnalyzedSentence();
     displayLength.innerHTML = wordsWidgetInst.returnTheWordCount();
     errorMessage.innerHTML = wordsWidgetInst.errorMessage()
+    duplicateMessage.innerHTML = wordsWidgetInst.duplicateMessage()
+
     dot.classList.add(wordsWidgetInst.theDot(enter))
 
     let displayWords = wordsTemplate({
