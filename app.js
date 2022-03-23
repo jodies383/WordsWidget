@@ -52,14 +52,17 @@ export const WordsWidget = () => {
         analyzedSentence = ""
 
         if (sentence && sentence.length >= 5) {
-            sentenceList.push(sentence)
-            wordLength.push(splitSentence.length)
-            localStorage.setItem('wordLength', JSON.stringify(wordLength));
+            if (!sentenceList.includes(sentence)) {
+                sentenceList.push(sentence)
+                wordLength.push(splitSentence.length)
+                localStorage.setItem('wordLength', JSON.stringify(wordLength));
 
-            localStorage.setItem('sentences', JSON.stringify(sentenceList));
-            highlightWord(sentence, range)
-            error = ""
-
+                localStorage.setItem('sentences', JSON.stringify(sentenceList));
+                highlightWord(sentence, range)
+                error = ""
+            }
+            else error = "this sentence has already been analyzed",
+                theWordCount = ""
         }
         else {
             analyzedSentence = ""

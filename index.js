@@ -24,11 +24,6 @@ setTimeout(() => { errorMessage.innerHTML = "" }, 2000);
 range.oninput = function () {
     output.innerHTML = this.value;
 }
-
-enterSentence.addEventListener('click', () => {
-    enterSentence.value = ""
-})
-
 analyzeSentenceBtn.addEventListener('click', () => {
     setTimeout(() => { errorMessage.innerHTML = "" }, 2000);
 
@@ -82,4 +77,3 @@ listOfSentences.addEventListener('click', (evt) => {
     listOfSentences.innerHTML = displayWords
 })
 listOfSentences.innerHTML = displayWords
-
