@@ -38,7 +38,7 @@ input[type=range]::-ms-thumb {
   background: #93B7BE;
 }
 
-.analyzeSentence {
+.analyzeSentence, .heading {
   background-color: #93B7BE !important;
   border-color: #93B7BE !important;
 }
