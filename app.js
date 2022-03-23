@@ -42,7 +42,7 @@ export const WordsWidget = () => {
         for (let i = 0; i < highlightedWords.length; i++) {
             analyzedSentence += highlightedWords[i] + " ";
         }
-        theWordCount = `there are ${longestWord.length} words in this sentence`
+        theWordCount = `there are ${splitSentence.length} words in this sentence`
     }
     const analyzeSentence = (sentence, range) => {
         let lettersOnly = sentence.replace(/[^\w\s]|_/g, "")
