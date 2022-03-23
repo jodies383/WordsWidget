@@ -124,7 +124,7 @@ export const WordsWidget = () => {
             if (splitSentence.length >= avg.toFixed(2)) {
                 return ("green")
 
-            } else if ((splitSentence.length <= avg.toFixed(2))) {
+            } else if ((splitSentence.length < avg.toFixed(2))) {
                 return ("orange")
             }
         }
