@@ -61,8 +61,11 @@ export const WordsWidget = () => {
                 localStorage.setItem('sentences', JSON.stringify(sentenceList));
                 highlightWord(sentence, range)
                 error = ""
+                duplicate = ""
+
             }
-            else duplicate = "this sentence has already been analyzed",
+            else 
+                duplicate = "this sentence has already been analyzed",
                 theWordCount = "",
                 error = ""
         }
