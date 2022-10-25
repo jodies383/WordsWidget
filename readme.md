@@ -1,4 +1,4 @@
-# (Words widget)[https://jodies383.github.io/WordsWidget/]
+# [Words Widget](https://jodies383.github.io/WordsWidget/)
 
 A widget that allows a user to enter a sentence of 5 or more words. When the user clicks a button the sentence is analyzed.
 
